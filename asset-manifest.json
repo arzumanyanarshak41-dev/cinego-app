@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/cineon-app/static/css/main.9f4f7d30.css",
-    "main.js": "/cineon-app/static/js/main.826aa1b6.js",
-    "static/media/Logo.png": "/cineon-app/static/media/Logo.6922ea721b530de4db4c.png",
-    "static/media/girl_1.png": "/cineon-app/static/media/girl_1.d7d28a072f2947564ba4.png",
-    "static/media/girl_2.png": "/cineon-app/static/media/girl_2.8b3cff9c6c3cca2443af.png",
-    "static/media/boy_11.png": "/cineon-app/static/media/boy_11.8d8660625cc1113e2925.png",
-    "static/media/man_2.png": "/cineon-app/static/media/man_2.26a5860ba6ca9bda72ca.png",
-    "static/media/xIcon.png": "/cineon-app/static/media/xIcon.5cc943d27eb3ed685271.png",
-    "static/media/completeIcon.png": "/cineon-app/static/media/completeIcon.6b56f599bd50282122a0.png",
-    "index.html": "/cineon-app/index.html",
-    "main.9f4f7d30.css.map": "/cineon-app/static/css/main.9f4f7d30.css.map",
-    "main.826aa1b6.js.map": "/cineon-app/static/js/main.826aa1b6.js.map"
+    "main.css": "/cinegn-app/static/css/main.9f4f7d30.css",
+    "main.js": "/cinegn-app/static/js/main.4f979a2b.js",
+    "static/media/Logo.png": "/cinegn-app/static/media/Logo.6922ea721b530de4db4c.png",
+    "static/media/girl_1.png": "/cinegn-app/static/media/girl_1.d7d28a072f2947564ba4.png",
+    "static/media/girl_2.png": "/cinegn-app/static/media/girl_2.8b3cff9c6c3cca2443af.png",
+    "static/media/boy_11.png": "/cinegn-app/static/media/boy_11.8d8660625cc1113e2925.png",
+    "static/media/man_2.png": "/cinegn-app/static/media/man_2.26a5860ba6ca9bda72ca.png",
+    "static/media/xIcon.png": "/cinegn-app/static/media/xIcon.5cc943d27eb3ed685271.png",
+    "static/media/completeIcon.png": "/cinegn-app/static/media/completeIcon.6b56f599bd50282122a0.png",
+    "index.html": "/cinegn-app/index.html",
+    "main.9f4f7d30.css.map": "/cinegn-app/static/css/main.9f4f7d30.css.map",
+    "main.4f979a2b.js.map": "/cinegn-app/static/js/main.4f979a2b.js.map"
   },
   "entrypoints": [
     "static/css/main.9f4f7d30.css",
-    "static/js/main.826aa1b6.js"
+    "static/js/main.4f979a2b.js"
   ]
 }
