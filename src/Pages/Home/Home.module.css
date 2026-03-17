@@ -1,0 +1,324 @@
+.home {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #141414;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.loadingCircle {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #e50914;
+    border-top: 5px solid #141414;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.top {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    min-height: 60vh;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    transition: background 0.5s ease;
+}
+
+.top .overlay {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.leftSide,
+.rightSide {
+    position: relative;
+    z-index: 2;
+}
+
+.leftSide {
+    flex: 1;
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.leftSide h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.leftSide p {
+    margin-bottom: 1.5rem;
+    color: #ccc;
+}
+
+.buts {
+    display: flex;
+    gap: 1rem;
+}
+
+.buts button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.buts button:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.play {
+    background-color: #e50914;
+    color: white;
+}
+
+.rightSide {
+    flex: 0 0 200px;
+    max-width: 200px;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform 0.3s ease;
+}
+
+.rightSide:hover {
+    transform: scale(1.05);
+}
+
+.rightTop h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.rightTop p {
+    font-size: 1rem;
+    color: #e50914;
+    font-weight: bold;
+}
+
+.search {
+    width: 100%;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.search input {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    background-color: #222;
+    color: #fff;
+}
+
+.searchResults {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 0.5rem;
+    z-index: 10;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.movieCard {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background-color: #222;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.movieCard:hover {
+    transform: scale(1.02);
+    background-color: #333;
+}
+
+.movieCard img {
+    width: 50px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.movieCard div h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.movieCard div p {
+    margin: 0.2rem 0;
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+.films {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.film {
+    width: 150px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.film:hover {
+    transform: scale(1.05);
+}
+
+.film img {
+    width: 100%;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.film img:hover {
+    transform: scale(1.1);
+}
+
+.info {
+    padding: 0.5rem 0;
+}
+
+.info .title {
+    font-weight: bold;
+    color: #fff;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    font-weight: bold;
+    padding: 30px;
+}
+
+.pagination button {
+    padding: 0.5rem 1rem;
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.pagination button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    color: #fff;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .leftSide,
+    .rightSide {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .leftSide h1 {
+        font-size: 1.5rem;
+    }
+
+    .rightTop h2 {
+        font-size: 1rem;
+    }
+
+    .film {
+        width: 45%;
+    }
+}
+
+@media (max-width: 320px) {
+    .leftSide h1 {
+        font-size: 1.2rem;
+    }
+
+    .rightTop h2 {
+        font-size: 0.9rem;
+    }
+
+    .film {
+        width: 100%;
+    }
+
+    .search input {
+        font-size: 0.85rem;
+    }
+
+    .movieCard div h3 {
+        font-size: 0.85rem;
+    }
+}

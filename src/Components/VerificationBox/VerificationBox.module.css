@@ -1,0 +1,105 @@
+.verificationBox {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+p {
+    font-size: 0.95rem;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 15px 0;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.input:focus {
+    box-shadow: 0 0 8px #e50914;
+}
+
+.button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #e50914;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: #f6121d;
+}
+
+.backContainer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    svg {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        color: white;
+    }
+
+    svg:hover {
+        transform: scale(1.1);
+    }
+}
+
+
+
+@media (max-width: 500px) {
+    .verificationBox {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .input {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    .button {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    .backArrow {
+        width: 35px;
+        height: 35px;
+    }
+}

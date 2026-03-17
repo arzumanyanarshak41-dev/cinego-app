@@ -1,0 +1,56 @@
+.notTrueContainer {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 0, 0, 0.9);
+    color: white;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    animation: alertAnimation 1.3s forwards;
+}
+
+@keyframes alertAnimation {
+
+    0% {
+        transform: translateX(-50%) translateY(-50px);
+        opacity: 0;
+    }
+
+    23% {
+        transform: translateX(-50%) translateY(70px);
+        opacity: 1;
+    }
+
+    61% {
+        transform: translateX(-50%) translateY(70px) rotateZ(0deg);
+    }
+
+    65% {
+        transform: translateX(-50%) translateY(70px) rotateZ(-5deg);
+    }
+
+    70% {
+        transform: translateX(-50%) translateY(70px) rotateZ(5deg);
+    }
+
+    75% {
+        transform: translateX(-50%) translateY(70px) rotateZ(-5deg);
+    }
+
+    80% {
+        transform: translateX(-50%) translateY(70px) rotateZ(5deg);
+    }
+
+    85% {
+        transform: translateX(-50%) translateY(70px) rotateZ(0deg);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50px);
+        opacity: 1;
+    }
+}
