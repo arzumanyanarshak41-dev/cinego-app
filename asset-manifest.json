@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cineon-app/static/css/main.9f4f7d30.css",
-    "main.js": "/cineon-app/static/js/main.14b922f8.js",
+    "main.js": "/cineon-app/static/js/main.826aa1b6.js",
     "static/media/Logo.png": "/cineon-app/static/media/Logo.6922ea721b530de4db4c.png",
     "static/media/girl_1.png": "/cineon-app/static/media/girl_1.d7d28a072f2947564ba4.png",
     "static/media/girl_2.png": "/cineon-app/static/media/girl_2.8b3cff9c6c3cca2443af.png",
@@ -11,10 +11,10 @@
     "static/media/completeIcon.png": "/cineon-app/static/media/completeIcon.6b56f599bd50282122a0.png",
     "index.html": "/cineon-app/index.html",
     "main.9f4f7d30.css.map": "/cineon-app/static/css/main.9f4f7d30.css.map",
-    "main.14b922f8.js.map": "/cineon-app/static/js/main.14b922f8.js.map"
+    "main.826aa1b6.js.map": "/cineon-app/static/js/main.826aa1b6.js.map"
   },
   "entrypoints": [
     "static/css/main.9f4f7d30.css",
-    "static/js/main.14b922f8.js"
+    "static/js/main.826aa1b6.js"
   ]
 }
