@@ -1,8 +1,8 @@
-# Cinego-App 🎬
+# Cinego-App 
 
 Cinego-App is a modern web application for movie enthusiasts, built with **React.js**, **JavaScript**, **HTML**, and **CSS**. It allows users to explore movies, view details, and manage their favorites with a sleek, Netflix-inspired interface.
 
-## Features ✨
+## Features 
 
 - Browse popular, trending, and newly released movies.
 - Search movies by title.
@@ -12,9 +12,8 @@ Cinego-App is a modern web application for movie enthusiasts, built with **React
 - Responsive, clean, and modern UI with smooth animations.
 - Works seamlessly on desktop and mobile devices.
 
-_(Replace the paths with your actual screenshot files.)_
 
-## Technologies 💻
+## Technologies 
 
 - **React.js** – Front-end library for building UI.
 - **JavaScript** – App logic and interactivity.
@@ -22,7 +21,7 @@ _(Replace the paths with your actual screenshot files.)_
 - **Redux / React Context** – State management.
 - **Axios / Fetch API** – Fetching movie data from external APIs.
 
-## Screenshots 🖼️
+## Screenshots 
 
 Here you can showcase your app:
 
@@ -30,7 +29,7 @@ Here you can showcase your app:
 ![Movie Details](./src/Assets/Images/MoviePageScreen.png)  
 ![User Profile](./src/Assets/Images/UserPageScreen.png)
 
-## Installation 🚀
+## Installation 
 
 1. Clone the repository:
    ```bash
