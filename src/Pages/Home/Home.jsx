@@ -48,7 +48,18 @@ export const Home = () => {
         }, 400)
     }
 
+    const getVisiblePages = (current, total, maxVisible = 5) => {
+        const pages = [];
+        let start = Math.max(1, current - Math.floor(maxVisible / 2));
+        let end = Math.min(total, start + maxVisible - 1);
 
+        if (end - start + 1 < maxVisible) {
+            start = Math.max(1, end - maxVisible + 1);
+        }
+
+        for (let i = start; i <= end; i++) pages.push(i);
+        return pages;
+    };
     return (
         <div className={styles.home}>
             <div className={styles.top} style={{
@@ -59,7 +70,7 @@ export const Home = () => {
                     <h1>{randomFilm?.title || "Here You Can Watch Movie Trailers"}</h1>
                     <p>{randomFilm?.overview}</p>
                     <div className={styles.buts}>
-                        <button className={styles.play} onClick={()=>navigate(`/moviepage/${randomFilm.id}`)}>
+                        <button className={styles.play} onClick={() => navigate(`/moviepage/${randomFilm.id}`)}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-play-fill" viewBox="0 0 16 16">
                                 <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
                             </svg>
@@ -115,16 +126,21 @@ export const Home = () => {
                 })}
             </div>
             <div className={styles.pagination}>
-                <button
-                    onClick={() => setPage(prev => Math.max(prev - 1, 1))}
-                    disabled={page === 1}
-                >
+                <button onClick={() => setPage(prev => Math.max(prev - 1, 1))} disabled={page === 1}>
                     Prev
                 </button>
-                <span>Page {page}</span>
-                <button
-                    onClick={() => setPage(prev => prev + 1)}
-                >
+
+                {getVisiblePages(page, 500).map(p => (
+                    <button
+                        key={p}
+                        className={p === page ? styles.activePage : ''}
+                        onClick={() => setPage(p)}
+                    >
+                        {p}
+                    </button>
+                ))}
+
+                <button onClick={() => setPage(prev => Math.min(prev + 1, 500))} disabled={page === 500}>
                     Next
                 </button>
             </div>

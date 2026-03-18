@@ -7,7 +7,25 @@ const usersSlice = createSlice({
         users: [],
         loading: false
     },
-    reducers: {},
+    reducers: {
+        addToFavorites(state, { payload }) {
+            const user = state.users.find(el => el.id == payload.id)
+
+            if (!user) return
+
+            if (!user.favorites) {
+                user.favorites = []
+            }
+
+            if (user.favorites.includes(payload.movieId)) {
+                user.favorites = user.favorites.filter(
+                    id => id !== payload.movieId
+                )
+            } else {
+                user.favorites.unshift(payload.movieId)
+            }
+        }
+    },
     extraReducers: (builder) => {
         builder
             .addCase(usersFetch.pending, (state) => {
@@ -25,3 +43,4 @@ const usersSlice = createSlice({
 
 export const usersSelect = (state) => state.users
 export const usersReducer = usersSlice.reducer
+export const { addToFavorites } = usersSlice.actions

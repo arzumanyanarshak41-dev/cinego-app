@@ -14,7 +14,8 @@ export const NavMenu = () => {
     const [user, setUser] = useState(null)
     useEffect(() => {
         dispatch(usersFetch())
-        const logedId = localStorage.getItem("CineGo")
+    }, [])
+    useEffect(() => {
         if (logedId && users && users.length > 0) {
             const logedUser = users.find(el => el.id.toString() === logedId)
             if (logedUser) setUser(logedUser)

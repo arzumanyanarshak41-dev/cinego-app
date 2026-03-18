@@ -261,10 +261,6 @@
     transition: all 0.2s ease;
 }
 
-.pagination button:hover:not(:disabled) {
-    transform: scale(1.05);
-    opacity: 0.9;
-}
 
 .pagination button:disabled {
     background-color: #555;
@@ -274,6 +270,121 @@
 .pagination span {
     color: #fff;
     font-size: 1rem;
+}
+
+.nonMovies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.nonMoviesImg {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+.nonMovies h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.nonMovies p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.nonMovies button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff0000;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.nonMovies button:hover {
+    background-color: #e60000;
+}
+
+.noUser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #1c1c1c;
+    color: #fff;
+    border-radius: 12px;
+}
+
+.noUser h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.noUser p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.loginBtn {
+    padding: 10px 25px;
+    background-color: #e50914;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.loginBtn:hover {
+    background-color: #f6121d;
+    transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+    .noUser {
+        padding: 30px 15px;
+    }
+
+    .noUser h2 {
+        font-size: 20px;
+    }
+
+    .noUser p {
+        font-size: 14px;
+    }
+
+    .loginBtn {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nonMovies h1 {
+        font-size: 22px;
+    }
+
+    .nonMovies p {
+        font-size: 14px;
+    }
+
+    .nonMoviesImg {
+        width: 120px;
+    }
 }
 
 @media (max-width: 768px) {

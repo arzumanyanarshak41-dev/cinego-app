@@ -5,6 +5,7 @@ import { Home } from "../Pages/Home/Home"
 import { Layout } from "./Layout"
 import { MoviePage } from "../Pages/MoviePage/MoviePage"
 import { UserPage } from "../Pages/UserPage/UserPage"
+import { MyList } from "../Pages/MyList/MyList"
 
 export const AppRoutes = () => {
     return (
@@ -13,8 +14,9 @@ export const AppRoutes = () => {
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/" element={<Layout />}>
                 <Route index element={<Home />} />
-                <Route path="moviepage/:id" element={<MoviePage/>}/>
-                <Route path="userpage" element={<UserPage/>}/>
+                <Route path="moviepage/:id" element={<MoviePage />} />
+                <Route path="userpage" element={<UserPage />} />
+                <Route path="myList" element={<MyList />} />
             </Route>
         </Routes>
     )

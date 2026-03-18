@@ -106,6 +106,20 @@ export const UserPage = () => {
         setPassword("");
         setConfirmPassword("");
     };
+    const handleAvatarClick = (imgPath) => {
+        fetch(imgPath)
+            .then(res => res.blob())
+            .then(blob => {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    setUserImage(reader.result); 
+                    setCustomImage(false);
+                    setSelectedAvatar(imgPath); 
+                };
+                reader.readAsDataURL(blob);
+            });
+    };
+
 
     return (
         <div className={styles.page}>
@@ -136,11 +150,7 @@ export const UserPage = () => {
                             <img
                                 key={i}
                                 src={img}
-                                onClick={() => {
-                                    setSelectedAvatar(img);
-                                    setCustomImage(false);
-                                    setUserImage(null);
-                                }}
+                                onClick={() => handleAvatarClick(img)}
                                 className={`${styles.smallAvatar} ${!customImage && selectedAvatar === img ? styles.active : ""}`}
                             />
                         ))}

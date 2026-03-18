@@ -1,18 +1,37 @@
 import { useParams } from 'react-router-dom'
 import styles from './MoviePage.module.css'
 import { useEffect, useState, useRef } from 'react'
-import { useSelector } from 'react-redux'
-import { usersSelect } from '../../Store/UsersSlice/usersSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToFavorites, usersSelect } from '../../Store/UsersSlice/usersSlice'
+import { supabaseHeaders, supabaseUrl } from '../../Supabase/supabase'
 
 export const MoviePage = () => {
     const { id } = useParams()
     const [film, setFilm] = useState(null)
     const [trailerKey, setTrailerKey] = useState('')
     const trailerRef = useRef(null)
-
+    const dispatch = useDispatch()
     const logedId = localStorage.getItem('CineGo') || null
     const users = useSelector(usersSelect)?.users
     const [user, setUser] = useState(null)
+    const [cast, setCast] = useState([])
+
+    useEffect(() => {
+        const getCast = async () => {
+            try {
+                const res = await fetch(
+                    `https://api.themoviedb.org/3/movie/${id}/credits?api_key=1eda474d8a43894c253cbeb02bd72ac4&language=en-US`
+                )
+                const data = await res.json()
+                setCast(data.cast.slice(0, 10))
+            } catch (err) {
+                console.error('Error fetching cast:', err)
+            }
+        }
+
+        getCast()
+    }, [id])
+    console.log(cast);
 
     useEffect(() => {
         if (logedId && users.length > 0) {
@@ -44,6 +63,23 @@ export const MoviePage = () => {
         }
         getFilm()
     }, [id])
+    async function addToMyList() {
+        let updatedFavorites = []
+
+        if (user.favorites?.includes(id)) {
+            updatedFavorites = user.favorites.filter(movId => movId !== id)
+        } else {
+            updatedFavorites = [id, ...(user.favorites || [])]
+        }
+        dispatch(addToFavorites({ id: logedId, movieId: id }))
+        await fetch(`${supabaseUrl}/rest/v1/users?id=eq.${logedId}`, {
+            method: "PATCH",
+            headers: supabaseHeaders,
+            body: JSON.stringify({
+                favorites: updatedFavorites
+            })
+        })
+    }
 
     if (!film) return <div className={styles.loading}>Loading...</div>
 
@@ -70,7 +106,8 @@ export const MoviePage = () => {
                             ▶ Play Trailer
                         </button>
                         {user && (
-                            <button className={styles.myList}>+ My List</button>
+                            user?.favorites?.includes(id) ? <button className={styles.removemyList} onClick={addToMyList}>Remove From My List</button> :
+                                <button className={styles.myList} onClick={addToMyList}>+ My List</button>
                         )}
                     </div>
                 </div>
@@ -99,6 +136,18 @@ export const MoviePage = () => {
                     <p><strong>Duration:</strong> {film.runtime} min</p>
                     <p><strong>Language:</strong> {film.original_language.toUpperCase()}</p>
                 </div>
+            </div>
+            <h2 className={styles.castsTitle}>Casts</h2>
+            <div className={styles.casts}>
+                {cast?.map(el => {
+                    return (
+                        <div className={styles.castBox} >
+                            <img src={`https://image.tmdb.org/t/p/original${el.profile_path}`} alt="" />
+                            <h3>{el.original_name}</h3>
+                            <p>{el.character}</p>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )
